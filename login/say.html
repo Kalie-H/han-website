@@ -1,0 +1,51 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <style>
+        body{
+            background-color:  #f4f4f4;
+        }
+        form{
+            margin: 10% 30%;
+            border: #461001 2px;
+        }
+        input,textarea{
+            width:84%;
+            border: 1px solid  #cccbcb;
+            border-radius: 7px;
+        }
+        div{
+            margin-top: 15px;
+            font-family: "微软雅黑";
+        }
+    </style>
+</head>
+<body>
+<hr style=" width: 100%;height: 4px;background: #461001;" />
+<form action="say.php"  method="post" name = "myform" onsubmit="return CheckPost();">
+    <div>昵称:<br /><input type="text" size="10" name="user" style="height: 25px"/><br/></div>
+    <div>标题:<br /><input type="text" name="title" style="height: 25px"/><br/></div>
+    <div>内容:<br /><textarea  name="content" cols="88%" rows="9" ></textarea><br/></div>
+    <div><input type="submit" name="submit" value="提交留言" style=" width: 84%;margin: 0 auto; padding: 10px; border: 1px solid  #cccbcb;border-radius: 7px;
+    font-size: 1em;  font-weight: bold;color: #fff;  background: #461001;cursor: pointer;" /></div>
+</form>
+<SCRIPT language=javascript>
+    function CheckPost()
+    {
+        if (myform.title.value.length<4)
+        {
+            alert("标题不能少于4个字符");
+            myform.title.focus();
+            return false;
+        }
+        if (myform.content.value=="")
+        {
+            alert("必须要填写留言内容");
+            myform.content.focus();
+            return false;
+        }
+
+    }
+</SCRIPT>
+</body>
+</html>
